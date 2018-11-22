@@ -1,4 +1,4 @@
-#include "fib_generator.h"
+#include "fibonacci_generator.h"
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -9,7 +9,7 @@ using std::string;
 
 int main() {
 
-    FibonacciGenerator<size_t> gen1 {};
+    FibonacciGenerator<int> gen1 {};
     std::generate_n(std::ostream_iterator<decltype(gen1)::result_type>(cout," "), 20, gen1);
     cout << endl;
 

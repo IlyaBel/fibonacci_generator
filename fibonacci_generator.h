@@ -1,14 +1,17 @@
 #ifndef FIB_GENERATOR_H
 #define FIB_GENERATOR_H
 
-template <class T>
+#include <functional>
+
+template <class T, class Plus = std::plus<T>>
 class FibonacciGenerator {
 private:
     T first_;
     T second_;
+    Plus plus_;
 
     constexpr void generateNew(){
-        T tmp = first_ + second_;
+        T tmp = plus_(first_, second_);
         first_ = second_;
         second_ = tmp;
     }
